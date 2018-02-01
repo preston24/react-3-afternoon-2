@@ -13,6 +13,8 @@ import Edit from './components/Edit'
 import User from './components/User'
 import NewUser from './components/NewUser'
 
+import axios from 'axios';
+
 class App extends Component {
   render() {
     return (

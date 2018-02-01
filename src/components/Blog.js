@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Formated from './subcomponents/Formated';
 
-// import axios
+import axios from 'axios';
+
 
 class Blog extends Component{
     constructor(){
@@ -12,7 +13,13 @@ class Blog extends Component{
         }
     }
 
-    // insert componentWillMount method
+    componentWillMount() {
+        axios.get(`/api/blog/${this.props.match.params.id}`).then(results => {
+            this.setState({
+                blog: results.data
+            })
+        }).catch(console.log);
+    }
 
     
     render(){
